@@ -1,0 +1,52 @@
+<form #postForm="ngForm" (ngSubmit)="create()">
+  <h1 class="h3 mb-3 fw-normal"> 
+    What are you thinking?
+  </h1>
+
+  <div class="form-floating">
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      [(ngModel)]="postData.title"
+      #title
+      name="title"
+
+    > 
+    <label for="floatingInput">Title</label>
+  </div>
+
+  <div class="form-floating">
+    <input
+      type="text"
+      class="form-control"
+      id="content"
+      [(ngModel)]="postData.content"
+      #content
+      name="content"
+
+    > 
+    <label for="floatingInput">Content</label>
+  </div>
+
+  <div class="form-floating">
+    <input
+      type="text"
+      class="form-control"
+      id="imageUrl"
+      [(ngModel)]="postData.imageUrl"
+      #imageUrl
+      name="imageUrl"
+
+    > 
+    <label for="floatingInput">Image</label>
+  </div>
+
+  <button class="w-100 btn btn-lg btn-primary"
+    type="submit"
+  > 
+    Post
+  </button>
+
+
+</form>
