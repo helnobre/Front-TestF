@@ -1,10 +1,10 @@
 import {IUser} from "./user";
 
-export class IPost {
-  id: number | undefined;
-  title: string | undefined;
-  content: string | undefined;
-  dateCreated: Date | undefined;
-  author?: IUser | undefined;
+export interface IPost {
+  id: number;
+  title: string;
+  content: string;
+  dateCreated: Date;
+  author?: IUser;
 
 }

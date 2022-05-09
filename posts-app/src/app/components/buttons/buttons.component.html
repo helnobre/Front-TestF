@@ -1,7 +1,16 @@
-<button class="botao" type="button" *ngIf="userService.isAuthenticated()"> 
-    Edit
+<button class="botao" type="button" *ngIf="postService.postOwner(post.author?.id)"> 
+    <i class="material-icons">
+        edit
+    </i>
+    Editar
 </button>
 
-<button class="botao" type="button" > 
-    Remove
+
+<button class="botao" type="button" *ngIf="postService.postOwner(post.author?.id)"
+    (click) = "removePost()"
+> 
+    <i class="material-icons">
+        delete
+    </i>
+    Apagar
 </button>

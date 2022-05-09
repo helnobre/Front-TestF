@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    console.log('Home destroyed');
+ 
   }
 
   gotoSignUp() {

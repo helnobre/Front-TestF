@@ -18,6 +18,9 @@ import {PostsService} from "./services/posts.service";
 import { PostItemComponent } from './components/list-posts/post-item/post-item.component';
 import { CommonModule } from '@angular/common';
 import { ButtonsComponent } from './components/buttons/buttons.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { UpdatePostComponent } from './components/update-post/update-post.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +32,17 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
     AddPostComponent,
     ListPostsComponent,
     PostItemComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    UpdatePostComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    MatSnackBarModule
   ],
   providers: [UserService, AuthGuardGuard, PostsService],
   bootstrap: [AppComponent]
