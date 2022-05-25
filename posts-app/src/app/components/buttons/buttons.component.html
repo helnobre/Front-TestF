@@ -1,16 +1,22 @@
-<button class="botao" type="button" *ngIf="postService.postOwner(post.author?.id)"> 
-    <i class="material-icons">
-        edit
-    </i>
-    Editar
-</button>
 
+    <div class="botoes d-flex justify-content-end" >
 
-<button class="botao" type="button" *ngIf="postService.postOwner(post.author?.id)"
-    (click) = "removePost()"
-> 
-    <i class="material-icons">
-        delete
-    </i>
-    Apagar
-</button>
+        <button type="button" (click)="changeRoute(post.id)"  *ngIf="postService.postOwner(post.author?.id)"> 
+           
+                <i class="material-icons">
+                    edit
+                </i>
+            Editar
+            
+        </button>
+    
+        <button class="botao" type="button" *ngIf="postService.postOwner(post.author?.id)"
+            (click) = "removePost()"> 
+            <i class="material-icons">
+                delete
+            </i>
+            Apagar
+        </button>
+    
+    </div>
+    

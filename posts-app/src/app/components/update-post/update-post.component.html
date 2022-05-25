@@ -1,1 +1,57 @@
-<p>update-post works!</p>
+<form #postForm="ngForm" >
+    <h1 class="h3 mb-3 fw-normal"> 
+      Update Post
+    </h1>
+  
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="postData.title"
+        #title
+        name="title"
+
+      > 
+      <label for="floatingInput">Title</label>
+    </div>
+  
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="content"
+        [(ngModel)]="postData.content"
+        #content
+        name="content"
+  
+      > 
+      <label for="floatingInput">Content</label>
+    </div>
+  
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="imageUrl"
+        [(ngModel)]="postData.imageUrl"
+        #imageUrl
+        name="imageUrl"
+  
+      > 
+      <label for="floatingInput">Image</label>
+    </div>
+  
+    <button class="button"
+    type="button" (click)="update()"
+    > 
+      Update Post
+    </button>
+
+    <button class="button"
+      type="button"
+    >
+      Cancel 
+    </button>
+
+  </form>

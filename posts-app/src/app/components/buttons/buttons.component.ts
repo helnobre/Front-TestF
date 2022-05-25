@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IPost } from 'src/app/models/post';
 import { PostsService } from 'src/app/services/posts.service';
-
 import { UserService } from 'src/app/services/user.service';
 
 
@@ -15,7 +14,7 @@ import { UserService } from 'src/app/services/user.service';
 export class ButtonsComponent implements OnInit {
   @Input()
   post: IPost | any;
-  postId = 0;
+  //postId = 0;
 
   constructor(public userService: UserService, public postService: PostsService,
      private router: Router){ }
@@ -42,5 +41,12 @@ export class ButtonsComponent implements OnInit {
     
 
   }
-  
+   
+  changeRoute(id: number)
+  {
+    console.log(typeof(id));
+    
+    this.router.navigateByUrl(`update-post/${id}`);
+  }
+ 
 }

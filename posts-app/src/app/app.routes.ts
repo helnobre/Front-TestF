@@ -13,5 +13,5 @@ export const routes : Route[] = [
   {path: 'signup', component: SignupComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'add-post', component: AddPostComponent, canActivate: [AuthGuardGuard]},
-  {path: 'update-post', component: UpdatePostComponent}
+  {path: 'update-post/:id', component: UpdatePostComponent}
 ]

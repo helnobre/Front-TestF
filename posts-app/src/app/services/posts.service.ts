@@ -19,6 +19,15 @@ export class PostsService {
     return this.http.get<IPost[]>(`${API_URL}/posts`);
   }
 
+  getPostByID(id :  any)
+  {
+    const token = localStorage.getItem('token');
+    const options = {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)
+    };
+    return this.http.get<IPost>(`${API_URL}/posts/${id}`, options);
+  }
+
   createPost(title: string, content: string, imageUrl: string)
   {
     const token = localStorage.getItem('token');
@@ -39,7 +48,7 @@ export class PostsService {
     return this.http.delete<IPost>(`${API_URL}/posts/${id}`, options)
   }
 
-  updatePost(id: number)
+  updatePost(id: number, title: string, content: string, imageUrl: string)
   {
     const token = localStorage.getItem('token');
 
@@ -47,7 +56,7 @@ export class PostsService {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)
   
     }
-    return this.http.put<IPost>(`${API_URL}/posts/${id}`, options)
+    return this.http.put<IPost>(`${API_URL}/posts/${id}`, {title, content, imageUrl}, options)
   }
 
   postOwner(authorId: number | undefined): boolean {

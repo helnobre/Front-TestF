@@ -19,8 +19,9 @@ import { PostItemComponent } from './components/list-posts/post-item/post-item.c
 import { CommonModule } from '@angular/common';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { UpdatePostComponent } from './components/update-post/update-post.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { UpdatePostComponent } from './components/update-post/update-post.compon
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule, 
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   providers: [UserService, AuthGuardGuard, PostsService],
   bootstrap: [AppComponent]
